@@ -15,4 +15,9 @@ Conn("localhost", 27017, "tarefas");
 
 const port = 3000;
 
-const tarefasRouter = require('')
+const tarefasRouter = require('./routers/tarefas.routes');
+app.use('/tarefas', tarefasRouter);
+
+app.listen(port, () => {
+    console.info(`Servidor rodando na porta ${port}`);
+})
