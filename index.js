@@ -7,6 +7,7 @@ const app = express();
 app.use(express.json());
 
 const Conn = require('./models/conn/conn');
+
 const db_url = process.env.DB_URL;
 const db_user = process.env.DB_USER;
 const db_pass = process.env.DB_PASS;
