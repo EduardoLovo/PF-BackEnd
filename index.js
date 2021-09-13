@@ -18,6 +18,6 @@ const port = 3000;
 const tarefasRouter = require('./routers/tarefas.routes');
 app.use('/tarefas', tarefasRouter);
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.info(`Servidor rodando na porta ${port}`);
 })
