@@ -13,7 +13,7 @@ const db_user = process.env.DB_USER;
 const db_pass = process.env.DB_PASS;
 const db_data = process.env.DB_DATA;
 
-Conn(db_url,db_user,db_pass,db_data);
+Conn(db_url, db_user, db_pass, db_data);
 
 // Conn("localhost", 27017, "tarefas");
 
