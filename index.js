@@ -4,10 +4,22 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express');
 const cors = require('cors');
 
+// const corsOptions = {
+//     origin: "http://localhost:3000/",
+//     optionsSuccessStatus: 200,
+// }
+
+const whitelist = ['https://to-do-list-eduardo.herokuapp.com/tarefas', 'http://localhost:3000/']
 const corsOptions = {
-    origin: "http://localhost:3000/",
-    optionsSuccessStatus: 200,
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
 }
+
 
 const app = express();
 app.use(express.json());
