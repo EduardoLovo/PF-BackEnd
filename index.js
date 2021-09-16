@@ -5,7 +5,7 @@ const express = require('express');
 const cors = require('cors');
 
 const corsOptions = {
-    origin: "https://to-do-list-eduardo.herokuapp.com/tarefas",
+    origin: "https://front-to-do-list.herokuapp.com/",
     optionsSuccessStatus: 200,
 }
 
