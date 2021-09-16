@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
-function Conn(db_url, db_user, db_pass, db_data) {
-    mongoose.connect(`${db_url}/${db_data}`, {
-        user: db_user,
-        pass: db_pass,
+function Conn(url, user, pass, data) {
+    mongoose.connect(`${url}/${data}`, {
+        user: user,
+        pass: pass,
         useNewUrlParser:true,
         useUnifiedTopology:true,
     }).then(() => {
