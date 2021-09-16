@@ -4,21 +4,21 @@ if (process.env.NODE_ENV !== "production") {
 const express = require('express');
 const cors = require('cors');
 
-// const corsOptions = {
-//     origin: "https://front-to-do-list.herokuapp.com",
-//     optionsSuccessStatus: 200,
-// }
-
-const whitelist = ['https://front-to-do-list.herokuapp.com', 'http://localhost:3000']
 const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
-  }
+    origin: "https://front-to-do-list.herokuapp.com",
+    optionsSuccessStatus: 200,
 }
+
+// const whitelist = ['https://front-to-do-list.herokuapp.com', 'http://localhost:3000']
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
 
 
 const app = express();
