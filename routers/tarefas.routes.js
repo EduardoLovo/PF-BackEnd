@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Tarefa = require('../models/tarefas');
+const tarefaController = require('../controllers/TarefasControl')
 
 router.get('/', async (req, res) => {
     await Tarefa.find({})
@@ -13,16 +14,7 @@ router.get('/', async (req, res) => {
 });
 
 
-router.post('/add', async (req,res) => {
-    await Tarefa.create(req.body)
-    .then(() => {
-        res.status(200).send("Tarefa adicionada com sucesso");
-    })
-    .catch((err) => {
-        res.status(400).send("Erro ao adicionar tarefa, tente novamente");
-        console.error(err);
-    })
-});
+router.post('/add', tarefaController.createTarefa);
 
 router.get('/findById/:id', async (req, res) => {
     await Tarefa.find({_id : req.params.id})
